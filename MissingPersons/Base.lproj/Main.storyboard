@@ -1,25 +1,142 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MissingPersons" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tw7-qb-nQz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Missing persons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgZ-nG-Qax">
+                                        <rect key="frame" x="89" y="36" width="142" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.66818598659395978" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="dgZ-nG-Qax" firstAttribute="centerX" secondItem="tw7-qb-nQz" secondAttribute="centerX" id="8fZ-ep-OUp"/>
+                                    <constraint firstAttribute="bottom" secondItem="dgZ-nG-Qax" secondAttribute="bottom" constant="8" id="FdR-Mr-IRH"/>
+                                    <constraint firstAttribute="height" constant="65" id="z3Z-Ex-Ddt"/>
+                                </constraints>
+                            </view>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="noun_138926" translatesAutoresizingMaskIntoConstraints="NO" id="nPI-Jz-jnY">
+                                <rect key="frame" x="91" y="253" width="138" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="138" id="iXA-WY-CUR"/>
+                                    <constraint firstAttribute="width" constant="138" id="yQ7-1I-C2u"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOI-oT-Cge">
+                                <rect key="frame" x="63" y="427" width="195" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.66818598659999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="csD-oR-B2L"/>
+                                    <constraint firstAttribute="width" constant="195" id="vUk-Wi-F4v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="CHECK FOR MATCH">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkForMatch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pyD-3i-H3B"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hDh-5b-TDO">
+                                <rect key="frame" x="0.0" y="83" width="320" height="146"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="wsE-kI-hKV"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XqZ-oe-Xlu">
+                                    <size key="itemSize" width="190" height="129"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PersonCell" id="3A5-qC-UEw" customClass="PersonCell" customModule="MissingPersons" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="8.5" width="190" height="129"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="190" height="129"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XVU-gj-Ium">
+                                                    <rect key="frame" x="27" y="10" width="136" height="108"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="136" id="O8J-AA-uo1"/>
+                                                        <constraint firstAttribute="height" constant="108" id="Zkh-eN-q8J"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="XVU-gj-Ium" firstAttribute="trailing" secondItem="3A5-qC-UEw" secondAttribute="trailingMargin" constant="5" id="Nij-3R-p5Z"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="XVU-gj-Ium" secondAttribute="bottom" constant="5" id="dl5-Dp-Qwr"/>
+                                            <constraint firstItem="XVU-gj-Ium" firstAttribute="leading" secondItem="3A5-qC-UEw" secondAttribute="leadingMargin" constant="5" id="fZy-FR-6TT"/>
+                                            <constraint firstItem="XVU-gj-Ium" firstAttribute="centerY" secondItem="3A5-qC-UEw" secondAttribute="centerY" id="poT-PG-O2W"/>
+                                            <constraint firstItem="XVU-gj-Ium" firstAttribute="centerX" secondItem="3A5-qC-UEw" secondAttribute="centerX" id="tvs-Kx-hbR"/>
+                                            <constraint firstItem="XVU-gj-Ium" firstAttribute="top" secondItem="3A5-qC-UEw" secondAttribute="topMargin" constant="5" id="xQs-9R-RBn"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Nij-3R-p5Z"/>
+                                                <exclude reference="dl5-Dp-Qwr"/>
+                                                <exclude reference="fZy-FR-6TT"/>
+                                                <exclude reference="xQs-9R-RBn"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="personImage" destination="XVU-gj-Ium" id="nvy-Zf-Vgn"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hDh-5b-TDO" secondAttribute="trailing" id="2bq-9W-DCD"/>
+                            <constraint firstItem="tw7-qb-nQz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7eP-d1-Gem"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lOI-oT-Cge" secondAttribute="bottom" constant="85" id="S7m-zM-PfH"/>
+                            <constraint firstItem="hDh-5b-TDO" firstAttribute="top" secondItem="tw7-qb-nQz" secondAttribute="bottom" constant="8" id="T9C-Dc-Zc5"/>
+                            <constraint firstAttribute="trailing" secondItem="tw7-qb-nQz" secondAttribute="trailing" id="Taa-Xt-Vft"/>
+                            <constraint firstItem="hDh-5b-TDO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="btH-AN-l31"/>
+                            <constraint firstItem="nPI-Jz-jnY" firstAttribute="top" secondItem="hDh-5b-TDO" secondAttribute="bottom" constant="24" id="fKA-xQ-1Ge"/>
+                            <constraint firstItem="tw7-qb-nQz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gf2-84-19K"/>
+                            <constraint firstItem="nPI-Jz-jnY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rCD-FZ-zos"/>
+                            <constraint firstItem="lOI-oT-Cge" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tpg-Dz-TCW"/>
+                            <constraint firstItem="nPI-Jz-jnY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vRT-3F-vbD"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="collectionView" destination="hDh-5b-TDO" id="xcy-cP-PzE"/>
+                        <outlet property="selectedImg" destination="nPI-Jz-jnY" id="6xt-90-Fcx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="362"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="noun_138926" width="1200" height="1200"/>
+    </resources>
 </document>
